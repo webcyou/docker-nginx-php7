@@ -1,6 +1,7 @@
-# Docker-Compose nginx + PHP7-fpm + MySQL + phpMyAdmin
+# Docker-Compose 
+## nginx + PHP7-fpm + MySQL + phpMyAdmin
 
-Start Docker Quickstart Terminal
+### Start Docker Quickstart Terminal
 
 *Download*
 [docker-toolbox](https://www.docker.com/products/docker-toolbox)
