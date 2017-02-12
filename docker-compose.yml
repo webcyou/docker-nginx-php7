@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - php
+      - mysql:db
+  php:
+    image: php:fpm
+    volumes:
+      - ./code:/code
+      - ./log.conf:/usr/local/etc/php-fpm.d/zz-log.conf
+  mysql:
+    image: mysql:5.7.11
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.5.3.1-1
+    ports:
+      - "8080:8080"
+    links:
+      - mysql:db
